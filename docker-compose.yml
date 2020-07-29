@@ -1,16 +1,16 @@
 nginx:
-  build: images/nginx
+  build: components/nginx
   command: nginx -g "daemon off;"
   links:
     - php
   ports:
     - "80:80"
   volumes:
-    - ./images/php/ilib_api/public:/var/www/html/ilib_api/public
+    - ./components/php/ilib_api/public:/var/www/html/ilib_api/public
 php:
-  build: images/php
+  build: components/php
   volumes:
-    - ./images/php:/var/www/html
+    - ./components/php:/var/www/html
   working_dir: /var/www/html/ilib_api/public
   command: php-fpm
   links:

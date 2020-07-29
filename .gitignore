@@ -1,3 +1,4 @@
 .env
+/images/php/ilib_api/storage/logs/
 librarian.sql
 database/
